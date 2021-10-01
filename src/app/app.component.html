@@ -1,1 +1,4 @@
-<h1>hello world!</h1>
+<h1>Items Lists</h1>
+<ul>
+  <li *ngFor="let item of items$ | async">{{ item.name }}</li>
+</ul>

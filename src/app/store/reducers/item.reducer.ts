@@ -1,7 +1,10 @@
 import { ItemAction, ItemActionTypes } from '../actions/item.actions';
 import { Item } from '../models/item.model';
 
-const initailState: Array<Item> = [{ id: '123456', name: 'Milk' }];
+const initailState: Array<Item> = [
+  { id: '123456', name: 'Milk' },
+  { id: '123457', name: 'Bread' },
+];
 
 export function ItemReducer(
   state: Array<Item> = initailState,

@@ -9,10 +9,10 @@ import { APPSTATE, TODO } from './models/models';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  todos$: Observable<any>;
+  todos$: Observable<TODO[]>;
   constructor(private store: Store<APPSTATE>) {}
 
   ngOnInit(): void {
-    this.todos$ = this.store.select((store) => store.todos);
+    this.todos$ = this.store.select('todos');
   }
 }

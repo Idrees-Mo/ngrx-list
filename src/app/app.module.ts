@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
+import { TODO } from './models/models';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({
+      todos: (): any => {
+        return [
+          { title: 'take shower', done: true, id: 1 },
+          { title: 'morning walk', done: false, id: 2 },
+        ];
+      },
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
